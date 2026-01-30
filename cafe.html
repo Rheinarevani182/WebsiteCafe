@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cafe ReyCozy— Pelanggan</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background: linear-gradient(135deg, #f8ede3, #e6ccb2);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+      padding: 2rem;
+      margin: 2rem;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    .logo {
+      background: #6f4e37;
+      color: #fff;
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; font-weight: 600;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+    h1 { color: #4a3728; font-size: 1.8rem; }
+    .welcome-msg { color: #7a6a58; font-size: 0.95rem; }
+
+    .logout-container { text-align: right; }
+    .btn.logout {
+      background: #b66a38; color: #fff;
+      border: none; padding: 10px 20px;
+      border-radius: 10px; font-weight: 500;
+      cursor: pointer; transition: all 0.3s ease;
+    }
+    .btn.logout:hover { background: #9b5326; transform: scale(1.05); }
+
+    h3.section-title {
+      font-size: 1.4rem;
+      color: #4a3728;
+      border-left: 5px solid #b66a38;
+      padding-left: 10px;
+      margin: 1.8rem 0 1rem;
+    }
+
+    .cafe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.2rem;
+    }
+    .card-item {
+      background: #fff7ef;
+      border-radius: 15px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-item:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+    .item-img { font-size: 2rem; margin-bottom: 0.5rem; }
+    .item-name { font-weight: 600; color: #4a3728; }
+    .item-desc { font-size: 0.85rem; color: #7a6a58; }
+
+    .promo {
+      background: linear-gradient(135deg, #fff2e6, #ffe6cc);
+      padding: 1rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .promo h3 { color: #b66a38; }
+    .promo p { color: #6b5a4b; margin-top: .5rem; }
+
+    .testimoni {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .testi-card {
+      background: #fdf6ef;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .testi-card p { font-size: 0.9rem; color: #6b5a4b; margin-bottom: .5rem; }
+    .testi-card span { font-weight: 600; color: #4a3728; }
+
+    .contact {
+      background: #fefaf7;
+      margin-top: 2rem;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .contact p { color: #6b5a4b; font-size: 0.95rem; line-height: 1.6; }
+
+    @media (max-width: 600px) {
+      .hero { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .logout-container { width: 100%; text-align: left; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="hero">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="logo">CF</div>
+        <div>
+          <h1>Cafe ReyCozy</h1>
+          <div class="welcome-msg">☕ Selamat datang, pelanggan setia!</div>
+        </div>
+      </div>
+      <div class="logout-container">
+        <button class="btn logout" id="btnLogout">Keluar</button>
+      </div>
+    </div>
+
+    <!-- MENU -->
+    <section>
+      <h3 class="section-title">Menu Kopi</h3>
+      <div class="cafe-grid">
+        <div class="card-item"><div class="item-img">☕</div><div class="item-name">Espresso</div><div class="item-desc">Seduhan kopi pekat penuh energi.</div></div>
+        <div class="card-item"><div class="item-img">🥛</div><div class="item-name">Caffè Latte</div><div class="item-desc">Kopi lembut dengan susu creamy.</div></div>
+        <div class="card-item"><div class="item-img">🌿</div><div class="item-name">Cappuccino</div><div class="item-desc">Kopi creamy dengan busa nikmat.</div></div>
+        <div class="card-item"><div class="item-img">🍫</div><div class="item-name">Mocha</div><div class="item-desc">Kopi berpadu cokelat manis legit.</div></div>
+      </div>
+
+      <h3 class="section-title">Makanan & Camilan</h3>
+      <div class="cafe-grid">
+        <div class="card-item"><div class="item-img">🍰</div><div class="item-name">Caramel Cake</div><div class="item-desc">Lembut dan manis, teman kopi terbaik.</div></div>
+        <div class="card-item"><div class="item-img">🥐</div><div class="item-name">Croissant</div><div class="item-desc">Renyah di luar, lembut di dalam.</div></div>
+        <div class="card-item"><div class="item-img">🧀</div><div class="item-name">Cheese Toast</div><div class="item-desc">Roti panggang gurih dengan keju meleleh.</div></div>
+      </div>
+
+      <h3 class="section-title">Minuman Non-Kopi</h3>
+      <div class="cafe-grid">
+        <div class="card-item"><div class="item-img">🍵</div><div class="item-name">Matcha Latte</div><div class="item-desc">Susu lembut dengan aroma teh hijau Jepang.</div></div>
+        <div class="card-item"><div class="item-img">🧋</div><div class="item-name">Boba Milk Tea</div><div class="item-desc">Minuman kekinian dengan topping boba kenyal.</div></div>
+        <div class="card-item"><div class="item-img">🍹</div><div class="item-name">Lemonade</div><div class="item-desc">Segar dan manis, cocok di siang hari.</div></div>
+      </div>
+    </section>
+
+    <!-- PROMO -->
+    <div class="promo">
+      <h3>Promo Spesial Minggu Ini 🎉</h3>
+      <p>💥 Beli 2 kopi gratis 1 camilan pilihan!</p>
+      <p>Berlaku setiap hari Senin–Jumat, pukul 10.00–15.00 WIB.</p>
+    </div>
+
+    <!-- TESTIMONI -->
+    <section>
+      <h3 class="section-title">Apa Kata Mereka?</h3>
+      <div class="testimoni">
+        <div class="testi-card"><p>"Tempatnya cozy banget, cocok buat nugas!"</p><span>— Nanda</span></div>
+        <div class="testi-card"><p>"Kopinya enak, pelayanannya ramah!"</p><span>— Dimas</span></div>
+        <div class="testi-card"><p>"Croissantnya lembut dan fresh dari oven!"</p><span>— Sinta</span></div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="contact">
+      <h3 class="section-title">Hubungi Kami</h3>
+      <p>📍 Alamat: Jl. Ketintang Timur PTT 3 No 26</p>
+      <p>📞 Telepon: (022) 123-4567</p>
+      <p>📧 Email: hello@cafereycozy.id</p>
+      <p>🕒 Jam Buka: Setiap hari, 07.00 – 22.00 WIB</p>
+    </section>
+  </div>
+
+  <script>
+    if (!localStorage.getItem('loggedIn')) window.location.href = 'index.html';
+    document.getElementById('btnLogout').addEventListener('click', () => {
+      localStorage.removeItem('loggedIn');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

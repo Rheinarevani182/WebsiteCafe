@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daftar Pelanggan — Cafe ReyCozy</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <div class="card">
+    <h2>Daftar Pelanggan Baru</h2>
+    <p class="small">Buat akun baru untuk menikmati layanan <b>Cafe Cozy</b>.</p>
+
+    <form id="registerForm">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="contoh@email.com" required>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="Minimal 6 karakter" required>
+
+      <button type="submit" class="btn">Daftar</button>
+      <p class="small">Sudah punya akun? <a href="index.html">Masuk</a></p>
+    </form>
+
+    <div id="msg"></div>
+  </div>
+
+  <script src="register.js"></script>
+</body>
+</html>
